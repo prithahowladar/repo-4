@@ -46,12 +46,15 @@ HIRING_CHOICES = (
     ('3','Maybe'),
 )
 class UserInfo(models.Model):
+    firstname = models.CharField(max_length=255, null = True)
+    lastname = models.CharField(max_length=255, null = True)
+    college = models.CharField(max_length=1024, verbose_name="Name of the College", null = True)
+    mobile = models.CharField(max_length=10, verbose_name="Mobile Number", null = True)
+    achievemennts = models.TextField(max_length=1024, verbose_name="Personal Achievements", null =True)
+    profile = models.TextField(max_length=1024, verbose_name="Preferred Job Profile", null =True)
+    cgpa = models.FloatField(verbose_name="CGPA (0.00 - 10.00)",
+                             validators=[MaxValueValidator(10), MinValueValidator(0)], default=0)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="userinfo", null = True)
+    branch = models.CharField(max_length=255, null = True)
     email = models.EmailField(null=True)
-    company = models.CharField(max_length = 1024, verbose_name = "Name of the Company")
-    intern = models.CharField(max_length=6, choices=INTERN_CHOICES, default='1', verbose_name = "Number of Interns")
-    job = models.TextField(max_length=1024, verbose_name="Job Description")
-    timeperiod = models.CharField(max_length=100, choices=TIME_CHOICES, default='1', verbose_name="Time period when you want the intern")
-    stipend = models.CharField(max_length=1024, verbose_name="Tentative stipend (per month)")
-    hiring = models.CharField(max_length=10, choices=HIRING_CHOICES, default='1', verbose_name="Are you interested in hiring permanent employees also?")
-    requirements = models.TextField(max_length=1024, verbose_name="Specific requirements (Like college or stream of candidates)")
 

@@ -1,5 +1,7 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Info</title>
     <style>
     body {
@@ -7,7 +9,7 @@
   background-attachment: fixed;
   background-size: cover;}
 
-    #navbar{
+#navbar{
     background:#4e5a63;
     margin:-10px;
     padding-top:2%;
@@ -43,7 +45,41 @@
   top: 0;
   width: 100%;
 }
-        #mybtn{
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
+
+    .column {
+  float: left;
+  margin-top:100px;
+  margin-bottom:100px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#c1{
+text-align:right;
+margin-left:5%;
+}
+#c1 li{
+margin-bottom:25px;
+color:#b9c7c3;
+font-size:20px;
+}
+#c2 li{
+    margin-bottom:38px;
+    color:#b9c7c3;
+    font-size:20px;
+}
+#mybtn{
 margin-left:50%;
 }
 
@@ -242,10 +278,25 @@ margin-left:50%;
 	left: 170px;
 	top: -300px;
 }
-    </style>
+
+#heading{
+    color:white;
+    text-align:right;
+    margin-top:180px;
+    position:fixed;
+    font-size: 75px;
+    font-weight: 800;
+    margin-left:60%;
+    margin-right:5%;
+}
+#better{
+    color:#7eab9e;
+}
+
+</style>
 </head>
 <body>
-<div id = "form-box">
+
     <div id ="navbar">
         <div class="container red topBotomBordersOut">
   <a  href="https://profcess.com/">HOME</a>
@@ -256,33 +307,44 @@ margin-left:50%;
   <a  href="{% url 'register' %}">SIGN UP</a>
   {% endif %}
 </div>
-    </div>
+            </div>
 
-    <form method="post">
-    {% csrf_token %}
-    {% for field in form %}
-      <p id = "label-tag">
-        {{ field.label_tag }}
-        <p id = "field">
-        {{ field }}
-  </p >
-        {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </p>
-    {% endfor %}
+            <div id = "heading">
+       <p>HELP US TO KNOW YOU <span id ="better">BETTER</span>.</p>
+   </div>
 
 
-         <button id = "mybtn" type="submit"><span class="shine"></span>
-	<span class="text">Submit</span></button>
+
+
+<form method="post" nonvalidate>
+  {% csrf_token %}
+
+  <div class="row">
+  <div class="column" id="c1"><ul style="list-style-type:none;">
+      <li>Firstname:<p>{{ form.firstname }}</p></li>
+      <li>Lastname:<p>{{ form.lastname }}</p></li>
+      <li>Name of the college:<p>{{ form.college}}</p></li>
+      <li>Mobile no:<p>{{ form.mobile }}</p></li>
+      <li>Cgpa<p>{{ form.cgpa }}</p></li>
+      <li>Branch:<p>{{ form.branch }}</p></li>
+      <li>Email:<p>{{ form.email  }}</p></li>
+
+</ul></div>
+  <div class="column" id="c2"><ul style="list-style-type:none;">
+      <li>Personal Achievements:<p>{{ form.achievemennts  }}</p></li>
+      <li>Preferred Job Profile:<p>{{ form.profile }}</p></li>
+       <button id = "mybtn" type="submit"><span class="shine"></span>
+	<span class="text">Next</span></button>
 	<a  href ="{% url 'login' %}" id = "mybtn2" type="submit"><span class="shine"></span>
 	<span class="text">Log Into Another Account</span></a>
 
-  </form>
-  </div>
+
+
+
+  </ul></div>
+</div>
+
+</form>
 <script>
             // When the user scrolls the page, execute myFunction
 window.onscroll = function() {myFunction()};
