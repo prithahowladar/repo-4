@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job</title>
+    <style>
+        body{
+
+        }
+    </style>
+</head>
+<body>
+<div>
+
+ {{ user.username }}
+    <form method="post" action ="." nonvalidate >
+  {% csrf_token %}
+    <p>{{ company1 }}<br>{{ profile1 }}<br>{{ vacancy1 }}<br> {{ location1 }}</p>
+        Apply:{{form.choice1}}
+
+    <p>{{ company2 }}<br>{{ profile2 }}<br>{{ vacancy2 }}<br> {{ location2 }}</p>
+        Apply:{{form.choice2}}
+
+    <p>{{ company3 }}<br>{{ profile3 }}<br>{{ vacancy3 }}<br> {{ location3 }}</p>
+        Apply:{{ form.choice3}}
+
+        <br><br><br><br> <button type="submit">Submit</button>
+
+
+</form>
+</div>
+</body>
+</html>

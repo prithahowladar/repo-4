@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jobs Available</title>
+    <style>
+    body {font-family: sans-serif;
+   background: linear-gradient(to right, black, transparent),url(https://images.pexels.com/photos/1226402/pexels-photo-1226402.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) center center no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+    }
+
+    #navbar{
+    background:#4e5a63;
+    margin:-10px;
+    padding-top:2%;
+    padding-bottom:2%;
+    text-align:center;
+    opacity:0.8;
+
+}
+
+#navbar a{
+    color:white;
+    font-weight:600;
+    letter-spacing:3px;
+    text-decoration:none;
+    margin-left:50px;
+    margin-right:50px;
+
+
+}
+
+#navbar a:hover{
+    color:tomato;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+#mybtn{
+margin-left:50%;
+}
+
+ #mybtn{
+	width: 300px;
+	height: 50px;
+	background: #333;
+	display: block;
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+	border: 1px solid #333333;
+	color: white;
+	text-decoration: none;
+    margin-left:33%;
+    margin-top:0px;
+    margin-bottom:100px;
+
+
+	-webkit-box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,.4);
+	-moz-box-shadow: inset 0px 1px 1px 00px rgba(255,255,255,.4);
+	box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,.4);
+
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+
+
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+
+	background-image: -webkit-linear-gradient(bottom, tomato,#c9431a);
+	background-image: -moz-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	background-image: -ms-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	background-image: -o-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	background-image: linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+}
+
+#mybtn span.text {
+	position: absolute;
+    text-align: center;
+	top: 16px;
+	left: 65px;
+    font-size: 25px;
+
+    margin-top:-5px;
+    margin-left: 30px;
+    letter-spacing: 0px;
+    text-shadow: 0px 0px 2px black;
+
+
+
+}
+
+#mybtn span.shine {
+	content: '';
+	position: absolute;
+	height: 400px;
+	width: 20px;
+	background: white;
+	top: -80px;
+	left: -20px;
+	display: block;
+	opacity: 0.8;
+
+	-webkit-box-shadow: 0px 0px 20px 10px white;
+	-moz-box-shadow: 0px 0px 20px 10px white;
+	box-shadow: 0px 0px 20px 10px white;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+#mybtn:hover {
+	-webkit-box-shadow: inset 0px 1px 10px 0px rgba(255,255,255,.4), 0px 3px 3px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: inset 0px 1px 10px 0px rgba(255,255,255,.4), 0px 3px 3px 0px rgba(0,0,0,0.4);
+	box-shadow: inset 0px 1px 10px 0px rgba(255,255,255,.4), 0px 3px 3px 0px rgba(0,0,0,0.4);
+}
+
+#mybtn:active {
+	-webkit-box-shadow: inset 0px 1px 15px 0px rgba(0,0,0,.4), inset 0px 1px 1px 1px rgba(0,0,0,.2), 0px 1px 1px 0 rgba(255,255,255,.5);
+	-moz-box-shadow: inset 0px 1px 15px 0px rgba(0,0,0,.4), inset 0px 1px 1px 1px rgba(0,0,0,.2), 0px 1px 1px 0 rgba(255,255,255,.5);
+	box-shadow: inset 0px 1px 15px 0px rgba(0,0,0,.4), inset 0px 1px 1px 1px rgba(0,0,0,.2), 0px 1px 1px 0 rgba(255,255,255,.5);
+}
+
+#mybtn:hover span.shine {
+	left: 170px;
+	top: -300px;
+}
+
+#mytitle{
+margin-top:5%;
+margin-bottom:-1%;
+color:white;
+text-align:center;
+font-size:50px;
+font-weight:500;
+letter-spacing:3px;
+opacity:0.8;
+}
+p {color: #666;}
+
+h2 {
+  font-size: 2em;
+  color: #e74c3c;
+}
+.centered {
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+@media screen and (min-width: 52em) {
+    .centered {
+        max-width: 52em;
+    }
+}
+
+/*--------------------------------------------------------------
+Header styles minus menu
+--------------------------------------------------------------*/
+
+.masthead {
+    background: #e74c3c;
+  	box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
+}
+
+.site-title {
+    margin: 0 0 1em;
+    padding: 1em 0;
+    font-size: 2em;
+    font-weight: 300;
+    text-align: center;
+    color: black;
+}
+
+@media screen and (min-width: 44.44em) {
+    .site-title {
+        font-size: 2em;
+    }
+}
+
+@media screen and (min-width: 50em) {
+    .site-title {
+        font-size: 2.5em;
+    }
+}
+
+.site-title a {
+    color: hsl(5, 45%, 95%);
+    text-decoration: none;
+}
+
+.site-title a:hover {
+    text-decoration: underline;
+}
+
+/* Card Based Layout - Base styles */
+
+.site-title {
+	color: white;
+}
+
+.card {
+    margin-top:10%;
+	background: white;
+	margin-bottom: 0em;
+}
+
+.card a {
+	color: black;
+	text-decoration: none;
+}
+
+.card a:hover {
+	box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
+}
+
+.card-content {
+	padding: 1.4em;
+}
+
+.card-content h2 {
+	margin-top: 0;
+	margin-bottom: .5em;
+	font-weight: normal;
+}
+
+.card-content p {
+	font-size: 95%;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* Flexbox styles */
+@media screen and (min-width: 40em) {
+  .cards {
+    margin-top: -1em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    margin-bottom: 1em;
+    display: flex;
+    flex: 0 1 calc(50% - 0.5em);
+    /* width: calc(50% - 1em); */
+  }
+} /* mq 40em*/
+
+@media screen and (min-width: 60em) {
+  .cards {
+    margin-top: inherit;
+  }
+
+  .card {
+    margin-bottom: 2em;
+    display: flex;
+    flex: 0 1 calc(33% - 0.5em);
+    /* width: calc(33% - 1em); */
+  }
+} /* mq 60em*/</style>
+</head>
+<body>
+<div id ="navbar">
+        <div class="container red topBotomBordersOut">
+  <a  href="https://www.profcess.com/">HOME</a>
+  {% if user.is_authenticated %}
+  <a   href="{% url 'logout' %}">LOG OUT</a>
+  {% else %}
+  <a   href="{% url 'login' %}">LOG IN</a>
+  <a  href="{% url 'register' %}">SIGN UP</a>
+  {% endif %}
+</div>
+</div>
+    <div id="mytitle">
+        Find A Job Today.
+    </div>
+
+<form method="post" action ="." nonvalidate >
+  {% csrf_token %}
+<main class="main-area">
+
+  <div class="centered">
+
+    <section class="cards">
+
+      <article class="card">
+        <a href="#">
+          <figure class="thumbnail">
+          <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="meow">
+          </figure>
+          <div class="card-content">
+            <h2>{{ company1 }}</h2>
+            <p><h4>Profile : {{ profile1 }}</h4></p>
+              <p><h4>Vacancy : {{ vacancy1 }}</h4></p>
+              <p><h4>Location : {{ location1 }}</h4></p>
+              <p><h2>Apply:{{ form.choice1}}</h2></p>
+          </div>
+          <!-- .card-content -->
+        </a>
+      </article>
+      <!-- .card -->
+
+      <article class="card">
+        <a href="#">
+          <figure class="thumbnail">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="meow">
+          </figure>
+          <div class="card-content">
+            <h2>{{ company2 }}</h2>
+            <p><h4>Profile : {{ profile2 }}</h4></p>
+              <p><h4>Vacancy :{{ vacancy2 }}</h4></p>
+              <p><h4>Location : {{ location2 }}</h4></p>
+              <p><h2>Apply:{{ form.choice2 }}</h2></p>
+          </div>
+          <!-- .card-content -->
+        </a>
+      </article>
+      <!-- .card -->
+
+      <article class="card">
+        <a href="#">
+          <figure class="thumbnail">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=702&q=80" alt="meow">
+          </figure>
+          <div class="card-content">
+            <h2>{{ company3 }}</h2>
+              <p><h4>Profile : {{ profile3 }}</h4></p>
+              <p><h4>Vacancy : {{ vacancy3 }}</h4></p>
+              <p><h4>Location : {{ location3 }}</h4></p>
+              <p><h2>Apply:{{ form.choice3 }}</h2></p>
+
+             </div>
+          <!-- .card-content -->
+        </a>
+      </article>
+      <!-- .card -->
+        <button id = "mybtn" type="submit"><span class="shine"></span>
+	<span class="text">Submit</span></button>
+    </section>
+  </div>
+  <!-- .centered -->
+
+</main>
+</form>
+</body>
+</html>

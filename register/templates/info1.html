@@ -321,18 +321,29 @@ margin-left:50%;
 
   <div class="row">
   <div class="column" id="c1"><ul style="list-style-type:none;">
-      <li>Name:<p>{{ form.name }}</p></li>
-      <li>Email:<p>{{ form.email }}</p></li>
-      <li>Mobile no:<p>{{ form.mobile }}</p></li>
-      <li>Address:<p>{{ form.address }}</p></li>
-      <li>City:<p>{{ form.city }}</p></li>
+      <li>College Name:<p>{{ form.college }}</p></li>
+      <li>University:<p>{{ form.university }}</p></li>
+      <li>City and State:<p>{{ form.unicityandstate }}</p></li>
+      <li>Degree:<p>{{ form.degree }} B.E.</p></li>
+        <li><p>{{ form.degree }} B.B.A.</p></li>
+        <li><p>{{ form.degree }} B.Sc </p></li>
+        <li><p>{{ form.degree}} B.Com<br></p></li>
+        <li><p>{{ form.degree }} Humanities and Social Sciences</p></li>
+        <li><p>{{ form.degree }} M.B.A.</p></li>
+        <li><p>{{ form.degree }} M.Tech</p></li>
+        <li><p>{{ form.degree }} M.Sc</p></li>
+        <li><p>{{ form.degree }} B.C.A.</p></li>
+        <li><p>{{ form.degree }} M.C.A.</p></li>
+      <li>Field of study (e.g. Computer Science and engineering):<p>{{ form.field}}</p></li>
+      <li>Graduation Date:<p>{{ form.graduationyear }}</p></li>
       <button id = "mybtn" type="submit"><span class="shine"></span>
-	<span class="text">Submit</span></button>
+	<span class="text">Next</span></button>
 	<a  href ="{% url 'login' %}" id = "mybtn2" type="submit"><span class="shine"></span>
 	<span class="text">Log Into Another Account</span></a>
 
 </ul></div>
   <div class="column" id="c2"><ul style="list-style-type:none;">
+
   </ul></div>
 </div>
 

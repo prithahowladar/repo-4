@@ -45,7 +45,7 @@ def userinfoview(request):
             userinfo.user = request.user
             userinfo.save()
 
-            return redirect("thankyou")
+            return redirect('/job')
     else:
         form = UserInfoForm()
         context = {"form":form}
