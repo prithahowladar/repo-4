@@ -24,9 +24,13 @@ class UserInfo(models.Model):
     mobile = models.CharField(max_length = 10, verbose_name = "Mobile Number", null = True)
     address = models.TextField(max_length = 1024, verbose_name = "Address", null = True)
     city =  models.CharField(max_length = 50, null = True)
-
-    #
-    #college = models.CharField(max_length = 1024, verbose_name = "Name of the College",null = True)
+    college = models.CharField(max_length = 1024, verbose_name = "Name of the College",null = True)
+    graduate = models.BooleanField(default=False)
+    finalyear = models.BooleanField(default=False)
+    polytechnic = models.BooleanField(default=False)
+    twelfth = models.BooleanField(default=False)
+    percentage = models.CharField(max_length=250, null=True)
+    communication = models.FloatField(validators=[MaxValueValidator(10), MinValueValidator(0)], default=0)
     ##university = models.CharField(max_length = 1024, verbose_name = "Name of the University",null = True)
     #unicityandstate= models.CharField(max_length = 1024, verbose_name = "Uni City and State",null = True)
     #degree = models.BooleanField(null = True)
