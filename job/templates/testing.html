@@ -1,0 +1,224 @@
+<html>
+<head>
+    <title>Test</title>
+    <style>
+body {font-family: sans-serif;
+   background: linear-gradient(to right, black, transparent),url(https://images.pexels.com/photos/1226402/pexels-photo-1226402.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) center center no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+    }
+#navbar{
+    background:#4e5a63;
+    margin:-10px;
+    padding-top:2%;
+    padding-bottom:2%;
+    text-align:center;
+    opacity:0.8;
+
+}
+
+#navbar a{
+    color:white;
+    font-weight:600;
+    letter-spacing:3px;
+    text-decoration:none;
+    margin-left:50px;
+    margin-right:50px;
+
+
+}
+
+#navbar a:hover{
+    color:tomato;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+.block{
+padding:10px;
+margin-left:20%;
+margin-right:20%;
+margin-top:2%;
+padding-left:1.5%;
+background-color:white;
+border-radius:15px;
+box-shadow:2px 2px 4px black;
+opacity:0.9;
+
+}
+
+
+
+.mybtn{
+background-color:green;
+text-decoration:none;
+box-shadow: 2px 2px 4px black;
+border-radius:5px;
+margin-left:0%;
+
+text-align:right;
+}
+.moredetails{
+text-decoration:none;
+color:white;
+padding:10px;
+font-size: 20px;
+text-shadow: 1px 1px 2px black;
+}
+h4{
+font-size: 15px;
+}
+.apply{
+margin-left:0%;
+background-color:chocolate;
+color: white;
+padding-left:8px;
+padding-right:5px;
+padding-top:5px;
+padding-bottom:5px;
+font-size: 18px;
+text-shadow: 1px 1px 2px black;
+box-shadow:2px 2px 4px black;
+border-radius:5px;
+}
+
+h2{
+color:darkblue;
+
+}
+
+#submit{
+background-color: cornflowerblue;
+color: white;
+border:none;
+box-shadow:2px 2px 4px black;
+cursor: pointer;
+font-size:25px;
+font-weight: 700px;
+padding:10px;
+text-shadow: 1px 1px 2px black;
+padding-left:100px;
+padding-right:100px;
+margin-left:39%;
+margin-top:2%;
+margin-bottom:3%;
+border-radius:5px;
+}
+#submit:hover{
+background-color:teal;
+}
+
+.pagination {
+  display: inline-block;
+  margin-left:36.5%;
+  margin-bottom:2%;
+}
+
+.pagination a {
+  color: white;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+}
+
+.pagination a.active {
+  background-color: cornflowerblue;
+  color: white;
+  border: 1px solid white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+.pagination a:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.pagination a:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+</style>
+</head>
+<body>
+<div id ="navbar">
+        <div class="container red topBotomBordersOut">
+  <a  href="https://www.profcess.com/">HOME</a>
+  {% if user.is_authenticated %}
+  <a   href="{% url 'logout' %}">LOG OUT</a>
+  {% else %}
+  <a   href="{% url 'login' %}">LOG IN</a>
+  <a  href="{% url 'register' %}">SIGN UP</a>
+  {% endif %}
+</div>
+</div>
+<form method="post" action ="." nonvalidate >
+  {% csrf_token %}
+<div class= "block">
+    <h2>{{ company1 }}</h2>
+
+        <h4> Profile : {{ profile1 }} &nbsp;&nbsp;|&nbsp;&nbsp;   Vacancy : {{ vacancy1 }}  &nbsp;&nbsp;|&nbsp;&nbsp;  Location : {{ location1 }} &nbsp;&nbsp;|&nbsp;&nbsp;    Salary: {{ salary1 }}
+        </h4>
+    <h2><a href = "#"  class="mybtn"><span class ="moredetails">Details</span></a>&nbsp;&nbsp; | &nbsp;
+        <span  class ="apply">Apply : {{ form.choice1 }}</span></h2>
+
+</div>
+
+<div class= "block">
+    <h2>{{ company2 }}
+     </h2>
+    <h4> Profile : {{ profile2 }} &nbsp;&nbsp;|&nbsp;&nbsp;   Vacancy : {{ vacancy2 }}   &nbsp;&nbsp;|&nbsp;&nbsp;  Location : {{ location2 }} &nbsp;&nbsp;|&nbsp; &nbsp;   Salary: {{ salary2 }}    </h4>
+    <h2><a class="mybtn" href = "#" ><span class ="moredetails">Details</span></a>&nbsp;&nbsp; | &nbsp; <span class ="apply">Apply : {{ form.choice2 }}</span></h2>
+</div>
+
+
+    <div class= "block">
+    <h2>{{ company3 }}</h2>
+        <h4> Profile : {{ profile3 }} &nbsp;&nbsp;|&nbsp;&nbsp;   Vacancy : {{ vacancy3 }}   &nbsp;&nbsp;|&nbsp;&nbsp;  Location : {{ location3 }} &nbsp;&nbsp;|&nbsp;&nbsp;    Salary: {{ salary3 }}     </h4>
+        <h2> <a class ="mybtn" href = "#" ><span class ="moredetails">Details</span></a>&nbsp;&nbsp; | &nbsp;&nbsp;<span class ="apply"> Apply : {{ form.choice3 }}</span> </h2>
+    </div>
+
+<div class= "block">
+    <h2>{{ company4 }} </h2>
+    <h4> Profile : {{ profile4 }} &nbsp;&nbsp;|&nbsp;&nbsp;   Vacancy : {{ vacancy4 }}  &nbsp;&nbsp;|&nbsp;&nbsp;  Location : {{ location4 }} &nbsp;&nbsp;|&nbsp;&nbsp;    Salary: {{ salary4 }}    </h4>
+    <h2><a class="mybtn" href = "#" ><span class ="moredetails">Details</span></a>&nbsp;&nbsp; | &nbsp;&nbsp;<span class ="apply">Apply : {{ form.choice4 }}</span></h2>
+</div>
+
+<div class= "block">
+    <h2>{{ company5 }}</h2>
+    <h4> Profile : {{ profile5 }} &nbsp;&nbsp;|&nbsp;&nbsp;   Vacancy : {{ vacancy5 }}   &nbsp;&nbsp;|&nbsp;&nbsp;  Location : {{ loaction5 }} &nbsp;&nbsp;|&nbsp;&nbsp;    Salary: {{ salary5 }}     </h4>
+    <h2> <a class="mybtn" href = "#" ><span class ="moredetails">Details</span></a>&nbsp;&nbsp; | &nbsp;&nbsp;<span class ="apply">Apply : {{ form.choice5 }}</span></h2>
+</div>
+    <button id = "submit" type="submit"><span class="shine"></span>
+	<span class="text">Submit</span></button>
+</form>
+
+<div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#">1</a>
+  <a class="active" href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
+</body>
+
+</html>

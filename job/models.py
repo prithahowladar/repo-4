@@ -9,8 +9,11 @@ class Job(models.Model):
     profile = models.CharField(max_length=255, null=True)
     vacancy = models.CharField(max_length = 255, null =True)
     location= models.CharField(max_length=255, null=True)
+    salary =   models.CharField(max_length=255, null=True)
 class CheckBox(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="job", null=True)
     choice1 = models.BooleanField(default= False)
     choice2 = models.BooleanField(default= False)
     choice3 = models.BooleanField(default=False)
+    choice4 = models.BooleanField(default=False)
+    choice5 = models.BooleanField(default=False)

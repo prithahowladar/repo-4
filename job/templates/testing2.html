@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test2</title>
+</head>
+<body>
+<form method="post" action ="." nonvalidate >
+  {% csrf_token %}
+    {% for job in jobs %}
+    <div class= "block">
+    <h2>{{ job.company }}</h2>
+
+        <h4> Profile : {{ job.profile }} &nbsp;&nbsp;|&nbsp;&nbsp;   Vacancy : {{ job.vacancy }}  &nbsp;&nbsp;|&nbsp;&nbsp;  Location : {{ job.location }} &nbsp;&nbsp;|&nbsp;&nbsp;    Salary: {{ job.salary }}
+        </h4>
+    <h2><a href = "#"  class="mybtn"><span class ="moredetails">Details</span></a>&nbsp;&nbsp; | &nbsp;
+        <span  class ="apply">{{ form.choice1 }}</span></h2>
+
+
+</div>
+    {% endfor %}
+
+</form>
+</body>
+</html>
